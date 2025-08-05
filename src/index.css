@@ -1,0 +1,14 @@
+:root {
+  font-family: "Fira Code", monospace;
+  font-optical-sizing: auto;
+  color: white;
+  font-size: 24px;
+}
+
+html,
+body,
+#root {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
