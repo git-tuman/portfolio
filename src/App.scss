@@ -192,32 +192,32 @@ $blur: blur(8px);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.6s ease, padding 0.6s ease;
-  }
 
-  .screenshots_desktop {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    .screenshots_desktop {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
 
-    img {
-      max-width: 100%;
+      img {
+        max-width: 100%;
+      }
     }
-  }
 
-  .screenshots_mobile {
-    width: 50%;
-    display: flex;
-    gap: 16px;
+    .screenshots_mobile {
+      width: 50%;
+      display: flex;
+      gap: 16px;
 
-    img {
-      max-width: 40%;
+      img {
+        max-width: 40%;
+      }
     }
-  }
 
-  &.visible {
-    padding-top: 16px;
-    max-height: 1000px;
+    &.visible {
+      padding-top: 16px;
+      max-height: 1000px;
+    }
   }
 
   // .photos-section {
