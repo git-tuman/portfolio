@@ -10,14 +10,25 @@ export type Link = {
   icon?: string;
 };
 
+export type UserProfile = {
+  name: string;
+  details: string;
+  message: string;
+  stack: string;
+  bio: string;
+  contacts: Link[];
+};
+
+export type Screenshots = {
+  desktop: string[];
+  mobile: string[];
+};
+
 export type Project = {
   name: string;
   deploy: Link;
   repo: Link;
-  screenshots: {
-    desktop: string[];
-    mobile: string[];
-  };
+  screenshots: Screenshots;
   description: string;
   stack: string;
   details: string;

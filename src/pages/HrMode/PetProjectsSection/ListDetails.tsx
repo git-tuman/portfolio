@@ -4,7 +4,7 @@ const ListDetails = ({ value }: { value: string }) => {
   return (
     <ul>
       {list.map((item, index) => (
-        <li className={index === list.length - 1 ? "accent" : ""}>
+        <li key={index} className={index === list.length - 1 ? "accent" : ""}>
           {item}
           {index < list.length - 1 && "."}
         </li>

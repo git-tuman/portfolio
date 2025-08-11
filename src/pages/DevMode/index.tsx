@@ -1,4 +1,7 @@
 import PageSwitcher from "../../shared/ui/PageSwitcher";
+import PetProjectsSectionDev from "./sections/PetProjectsSectionDev";
+import PhotosSectionDev from "./sections/PhotosSectionDev";
+import UserProfileSectionDev from "./sections/UserProfileSectionDev";
 
 const DevMode = () => {
   return (
@@ -6,11 +9,11 @@ const DevMode = () => {
       <PageSwitcher />
 
       <div className="dev-mode_content">
-        {/* <UserInfoSection />
+        <UserProfileSectionDev />
 
-        <PetProjectsSection />
+        <PetProjectsSectionDev />
 
-        <PhotosSection /> */}
+        <PhotosSectionDev />
       </div>
     </div>
   );

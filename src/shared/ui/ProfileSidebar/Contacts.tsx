@@ -1,4 +1,4 @@
-import { USER } from "../../constants";
+import { USER_PROFILE } from "../../constants";
 import ContactItem from "../ContactItem";
 
 const Contacts = () => {
@@ -7,8 +7,8 @@ const Contacts = () => {
       <h2>Контакты:</h2>
 
       <div className="contacts_list">
-        {USER.contacts.map((item) => (
-          <ContactItem item={item} icon={true} />
+        {USER_PROFILE.contacts.map((item) => (
+          <ContactItem key={item.name} item={item} icon={true} />
         ))}
       </div>
     </div>

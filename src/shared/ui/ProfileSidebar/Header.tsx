@@ -1,14 +1,19 @@
-import { Ava, USER } from "../../constants";
+import { AVATAR, USER_PROFILE } from "../../constants";
 
 const Header = () => {
   return (
     <div className="sidebar_header">
-      <img src={Ava} alt="avatar" className="sidebar_avatar" loading="lazy" />
+      <img
+        src={AVATAR}
+        alt="avatar"
+        className="sidebar_avatar"
+        loading="lazy"
+      />
 
       <div className="sidebar_details">
-        <h1>{USER.name}</h1>
+        <h1>{USER_PROFILE.name}</h1>
 
-        <p>{USER.details}</p>
+        <p>{USER_PROFILE.details}</p>
       </div>
     </div>
   );

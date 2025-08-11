@@ -8,7 +8,7 @@ const Navigation = ({ callback }: { callback: () => void }) => {
 
       <div className="navigation-list">
         {NAVIGATION_LIST.map((nav) => (
-          <NavigationItem nav={nav} callback={callback} />
+          <NavigationItem key={nav.id} nav={nav} callback={callback} />
         ))}
       </div>
     </div>

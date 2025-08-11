@@ -1,19 +1,23 @@
 $gray: rgba(45, 42, 46, 1);
 $gray-30: rgba(45, 42, 46, 0.3);
-$orange: rgb(255, 216, 102);
-$hidden: rgb(121, 146, 147);
+$yellow: rgb(255, 216, 102);
+$orange: rgb(252, 127, 73);
+$white-gray: rgb(121, 146, 147);
 $blue: rgb(120, 220, 232);
 $pink: rgb(255, 97, 136);
+$purple: rgb(171, 157, 218);
 $tablet: 768px;
 $laptop: 1441px;
 $mobile: 440px;
 $blur: blur(8px);
+$border: rgb(64, 62, 65);
+$border-active: rgb(91, 89, 92);
 
-@mixin text_decoration {
+@mixin text-decoration {
   h1,
   h2,
   h3 {
-    color: $orange;
+    color: $yellow;
     font: inherit;
     margin: 0;
   }
@@ -32,12 +36,39 @@ $blur: blur(8px);
   a {
     text-decoration: none;
     color: $blue;
+
+    &:hover {
+      color: $pink;
+    }
+  }
+}
+
+@mixin text-decoration_dev-mode {
+  h2,
+  p {
+    font: inherit;
+    margin: 0;
+    display: inline;
+  }
+
+  h2 {
+    color: $yellow;
+  }
+
+  a {
+    text-decoration: none;
+    color: $blue;
+
+    &:hover {
+      color: $pink;
+    }
   }
 }
 
 @mixin mode {
   display: flex;
   justify-content: center;
+  min-height: 100vh;
   width: 70%;
   padding: 48px;
   padding-top: 72px;
@@ -45,7 +76,7 @@ $blur: blur(8px);
 
   @media (max-width: $tablet) {
     width: 100%;
-    padding: 10px;
+    padding: 16px;
     padding-top: 48px;
     font-size: 16px;
   }
@@ -59,7 +90,7 @@ $blur: blur(8px);
 }
 
 .accent {
-  color: $orange;
+  color: $yellow;
 }
 
 .toast {
@@ -67,8 +98,8 @@ $blur: blur(8px);
   bottom: 24px;
   right: 24px;
   backdrop-filter: $blur;
-  color: $orange;
-  border: 1px solid $hidden;
+  color: $yellow;
+  border: 1px solid $white-gray;
   border-radius: 16px;
   padding: 13px 16px;
   font-size: 16px;
@@ -85,12 +116,19 @@ $blur: blur(8px);
 .page-switcher_wrapper {
   position: fixed;
   padding: 8px 16px 7px 16px;
-  border-left: 1px solid $hidden;
-  border-right: 1px solid $hidden;
-  border-bottom: 1px solid $hidden;
+  border-left: 1px solid $white-gray;
+  border-right: 1px solid $white-gray;
+  border-bottom: 1px solid $white-gray;
   border-radius: 0 0 16px 16px;
   top: 0;
   backdrop-filter: $blur;
+  opacity: 1;
+  transition: opacity 0.3s, transform 0.4s, top 0.4s;
+
+  &.hidden {
+    opacity: 0;
+    top: -100px;
+  }
 
   @media (max-width: $tablet) {
     padding: 10px;
@@ -114,10 +152,10 @@ $blur: blur(8px);
     font: inherit;
 
     cursor: pointer;
-    color: $hidden;
+    color: $white-gray;
 
     &.active {
-      color: $orange;
+      color: $yellow;
     }
 
     &:hover {
@@ -127,16 +165,20 @@ $blur: blur(8px);
 }
 
 .hr-mode {
-  @include text_decoration;
+  @include text-decoration;
   @include mode;
 
   .hr-mode_content {
     display: flex;
     flex-direction: column;
     gap: 72px;
+
+    @media (max-width: $tablet) {
+      gap: 48px;
+    }
   }
 
-  .user-info-section {
+  .user-profile-section {
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -151,7 +193,7 @@ $blur: blur(8px);
   }
 
   .pet-project_container {
-    border-top: 1px solid $hidden;
+    border-top: 1px solid $white-gray;
     padding-top: 24px;
     display: flex;
     flex-direction: column;
@@ -167,7 +209,7 @@ $blur: blur(8px);
   }
 
   .links-project {
-    color: $hidden;
+    color: $white-gray;
   }
 
   .screenshots_container {
@@ -176,7 +218,7 @@ $blur: blur(8px);
   }
 
   .screenshots_header {
-    color: $hidden;
+    color: $white-gray;
     display: flex;
     align-items: center;
     gap: 16px;
@@ -220,17 +262,155 @@ $blur: blur(8px);
     }
   }
 
-  // .photos-section {
-  // }
+  .photos_content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.pink {
+  color: $pink;
+}
+
+.blue {
+  color: $blue;
+}
+
+.purple {
+  color: $purple;
+}
+
+.white-gray {
+  color: $white-gray;
+}
+
+.orange {
+  color: $orange;
 }
 
 .dev-mode {
+  @include text-decoration_dev-mode;
   @include mode;
+
+  .header {
+    cursor: pointer;
+  }
+
+  .closing-symbols {
+    opacity: 1;
+    transition: height 0.6s ease, opacity 0.6s ease;
+
+    &.hidden {
+      opacity: 0;
+      height: 0;
+    }
+  }
 
   .dev-mode_content {
     display: flex;
     flex-direction: column;
     gap: 72px;
+
+    @media (max-width: $tablet) {
+      gap: 48px;
+    }
+  }
+
+  .accordion {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease, opacity 0.6s ease;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+
+    &.visible {
+      opacity: 1;
+      max-height: 5000px;
+    }
+  }
+
+  .content {
+    display: block;
+    border-left: 1px solid $border;
+    transition: font-size 0.2s ease, border-left 0.2s ease;
+    padding-left: 28px;
+
+    &:hover {
+      border-left: 1px solid $border-active;
+    }
+
+    @media (max-width: $tablet) {
+      padding-left: 19px;
+    }
+  }
+
+  .screenshots-header:hover {
+    cursor: pointer;
+  }
+
+  .screenshots_container {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+
+    @media (max-width: $tablet) {
+      gap: 10px;
+    }
+
+    .screenshots_desktop {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      @media (max-width: $tablet) {
+        gap: 10px;
+      }
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    .screenshots_mobile {
+      width: 50%;
+      display: flex;
+      gap: 16px;
+
+      @media (max-width: $tablet) {
+        gap: 10px;
+      }
+
+      img {
+        max-width: 40%;
+      }
+    }
+  }
+}
+
+.photos_list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+
+  @media (max-width: $tablet) {
+    gap: 10px;
+  }
+
+  @media (min-width: $tablet) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  img {
+    border-radius: 16px;
+    width: 100%;
+
+    @media (max-width: $tablet) {
+      border-radius: 10px;
+    }
   }
 }
 
@@ -239,9 +419,9 @@ $blur: blur(8px);
   top: 48px;
   right: 0;
   padding: 8px 0 8px 5px;
-  border-top: 1px solid $hidden;
-  border-left: 1px solid $hidden;
-  border-bottom: 1px solid $hidden;
+  border-top: 1px solid $white-gray;
+  border-left: 1px solid $white-gray;
+  border-bottom: 1px solid $white-gray;
   border-radius: 16px 0 0 16px;
   z-index: 1;
   display: flex;
@@ -254,7 +434,7 @@ $blur: blur(8px);
   }
 
   .toggle {
-    transition: opacity 0.3s, transform 0.4s, left 0.4s, right 0.4s;
+    transition: opacity 0.3s, transform 0.4s;
     transform: translateX(0) rotate(-90deg);
     transform: rotate(90deg);
   }
@@ -265,13 +445,13 @@ $blur: blur(8px);
 }
 
 .profile-sidebar {
-  @include text_decoration;
+  @include text-decoration;
   background: $gray;
   position: fixed;
   right: 0;
   width: 30%;
   height: 100%;
-  border-left: 1px solid $hidden;
+  border-left: 1px solid $white-gray;
   padding: 24px;
   box-sizing: border-box;
   display: flex;
@@ -317,7 +497,7 @@ $blur: blur(8px);
 
     p {
       font-size: 18px;
-      color: $hidden;
+      color: $white-gray;
     }
   }
 

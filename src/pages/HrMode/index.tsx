@@ -1,5 +1,5 @@
 import PageSwitcher from "../../shared/ui/PageSwitcher";
-import UserInfoSection from "./UserInfoSection";
+import UserProfileSection from "./UserProfileSection";
 import PetProjectsSection from "./PetProjectsSection";
 import PhotosSection from "./PhotosSection";
 
@@ -9,7 +9,7 @@ const HrMode = () => {
       <PageSwitcher />
 
       <div className="hr-mode_content">
-        <UserInfoSection />
+        <UserProfileSection />
 
         <PetProjectsSection />
 

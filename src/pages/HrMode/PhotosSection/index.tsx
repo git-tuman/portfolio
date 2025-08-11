@@ -1,14 +1,13 @@
 import { PHOTOS } from "../../../shared/constants";
+import PhotosList from "../../../shared/ui/PhotosList";
 
 const PhotosSection = () => {
   return (
-    <section id={PHOTOS} className="photos-section">
-      <div>
+    <section id={PHOTOS}>
+      <div className="photos_content">
         <h2>Мои фото:</h2>
 
-        {/* {PHOTOS_LIST.map((photo, index) => (
-          <img key={index} src={photo} alt="my photo" loading="lazy" />
-        ))} */}
+        <PhotosList />
       </div>
     </section>
   );

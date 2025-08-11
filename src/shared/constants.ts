@@ -7,9 +7,22 @@ import ScreenWivoHero from "../assets/screen-wivo-hero.png";
 import ScreenWivoHeroMob from "../assets/screen-wivo-hero-mob.png";
 import ScreenWivoApp from "../assets/screen-wivo-app.png";
 import ScreenWivoAppMob from "../assets/screen-wivo-app-mob.png";
-import type { Icon, Link, Nav, PageSwitcherType, Project } from "./types";
+import type {
+  Icon,
+  Link,
+  Nav,
+  PageSwitcherType,
+  Project,
+  UserProfile,
+} from "./types";
 
 import Avatar from "../assets/avatar.jpg";
+import Photo1 from "../assets/photo1.jpg";
+import Photo2 from "../assets/photo2.jpg";
+import Photo3 from "../assets/photo3.jpg";
+import Photo4 from "../assets/photo4.jpg";
+import Photo5 from "../assets/photo5.jpg";
+import Photo6 from "../assets/photo6.jpg";
 
 import JSIcon from "../assets/javascript-original.svg";
 import TSIcon from "../assets/typescript-original.svg";
@@ -27,16 +40,18 @@ import ESLintIcon from "../assets/eslint-original.svg";
 import VSCIcon from "../assets/vscode-original.svg";
 import FigmaIcon from "../assets/figma-original.svg";
 
-export const Ava = Avatar;
+export const AVATAR = Avatar;
 
 export const HR_MODE_PATCH = "/hr-mode";
 export const DEV_MODE_PATCH = "/dev-mode";
-export const USER_INFO = "userInfo";
+export const USER = "user";
 export const PET_PROJECTS = "petProjects";
 export const PHOTOS = "photos";
+export const DEFAULT_HEADER_SECTION = "export const = { ... }";
 
 export const ACTIVE = "active";
 export const VISIBLE = "visible";
+export const HIDDEN = "hidden";
 
 export const PageSwitcherList: PageSwitcherType[] = [
   { name: "Hr Mode", path: HR_MODE_PATCH },
@@ -46,7 +61,7 @@ export const PageSwitcherList: PageSwitcherType[] = [
 const DEMO = "демо";
 const REPO = "репозиторий";
 
-const contacts: Link[] = [
+const contactsList: Link[] = [
   {
     name: "GitHub",
     value: "git-tuman",
@@ -79,14 +94,14 @@ const contacts: Link[] = [
   },
 ];
 
-export const USER = {
+export const USER_PROFILE: UserProfile = {
   name: "Попондопуло Кирилл",
   details: "24 года, г. Киров",
   message: "Привет, я - Junior Frontend разработчик.",
   stack:
     "JS, TS, React, Redux, RTK, Redux thunk, WebSocket, Rest API, SCSS, HTML5.",
   bio: "Создаю приложения с упором на оптимизацию, адаптивность, чистоту и читаемость кода, люблю автоматизировать рутину и внедрять best practices. Постоянно учусь новому, открыт к интересным задачам и командной работе. На данный момент ищу первую работу где я смогу развиваться во Frontend направлении. В свободное время люблю выбираться на природу в кругу своей компании:)",
-  contacts: contacts,
+  contacts: contactsList,
 };
 
 export const PET_PROJECTS_LIST: Project[] = [
@@ -111,25 +126,37 @@ export const PET_PROJECTS_LIST: Project[] = [
     stack:
       "React 19 + TypeScript, SCSS, Webpack, FSD-архитектура (минимальная реализация: shared + widgets), IntersectionObserver API, Адаптивная верстка, Lazy loading изображений, CSS-анимации (SCSS)",
     details:
+      "Адаптивная pixel perfect вёрстка по макету Figma: поддержка мобильных и десктопных экранов (до 1920px), резиновая вёрстка для промежуточных разрешений. Навигация реализована с адаптивным хедером и бургер-меню для мобильных устройств, подсветка навигации активной секции через кастомный хук на IntersectionObserver. Оптимизирована производительность: загрузка страницы ~500мс, ленивая загрузка изображений, минимизация стилей и скриптов, семантическая разметка для SEO. Добавлены анимации переходов и появления элементов на SCSS. Это обеспечивает: удобство и быстрое взаимодействие на любых устройствах, плавный пользовательский опыт, высокую скорость загрузки и хорошее SEO, лёгкость поддержки и масштабирования проекта.",
+  },
+  {
+    name: "WIVO Bank 2",
+    deploy: {
+      name: DEMO,
+      value: "https://git-tuman.github.io/wivo-bank",
+      link: "https://git-tuman.github.io/wivo-bank",
+    },
+    repo: {
+      name: REPO,
+      value: "https://github.com/git-tuman/wivo-bank",
+      link: "https://github.com/git-tuman/wivo-bank",
+    },
+    screenshots: {
+      desktop: [ScreenWivoHero, ScreenWivoApp],
+      mobile: [ScreenWivoHeroMob, ScreenWivoAppMob],
+    },
+    description:
+      "Одностраничный лендинг, реализованный в рамках тестового задания. Проект выполнен с упором на пиксель-перфект, адаптивную верстку, анимации и быструю загрузку.",
+    stack:
+      "React 19 + TypeScript, SCSS, Webpack, FSD-архитектура (минимальная реализация: shared + widgets), IntersectionObserver API, Адаптивная верстка, Lazy loading изображений, CSS-анимации (SCSS)",
+    details:
       "Адаптивная pixel perfect вёрстка по макету Figma: поддержка мобильных и десктопных экранов (до 1920px), резиновая вёрстка для промежуточных разрешений. Навигация реализована с адаптивным хедером и бургер-меню для мобильных устройств, подсветка навигации активной секции через кастомный хук на IntersectionObserver. Оптимизирована производительность: загрузка страницы ~500мс, ленивый лоадинг изображений, минимизация стилей и скриптов, семантическая разметка для SEO. Добавлены анимации переходов и появления элементов на SCSS. Это обеспечивает: удобство и быстрое взаимодействие на любых устройствах, плавный пользовательский опыт, высокую скорость загрузки и хорошее SEO, лёгкость поддержки и масштабирования проекта.",
   },
 ];
 
-export const PHOTOS_LIST = [
-  ScreenWivoHero,
-  ScreenWivoHeroMob,
-  ScreenWivoApp,
-  ScreenWivoAppMob,
-];
-
-// export const SECTIONS = [
-//   { name: "USER", payload: USER },
-//   { name: "PET_PROJECTS", payload: PET_PROJECTS_LIST },
-//   { name: "PHOTOS", payload: PHOTOS },
-// ];
+export const PHOTOS_LIST = [Photo1, Photo2, Photo3, Photo4, Photo5, Photo6];
 
 export const NAVIGATION_LIST: Nav[] = [
-  { id: USER_INFO, name: "Обо мне" },
+  { id: USER, name: "Обо мне" },
   { id: PET_PROJECTS, name: "Пет-проекты" },
   { id: PHOTOS, name: "Мои фото" },
 ];
@@ -163,3 +190,17 @@ export const STACK_ICONS_LIST: Icon[] = [
     link: "https://code.visualstudio.com/",
   },
 ];
+
+export const SYMBOLS = {
+  quote: '"',
+  singleQuote: "`",
+  openingCurlyBrace: "{",
+  closingCurlyBrace: "}",
+  openingSquareBracket: "[",
+  closingSquareBracket: "]",
+  colon: ":",
+  semicolon: ";",
+  comma: ",",
+  equal: "=",
+  ellipsis: "...",
+};

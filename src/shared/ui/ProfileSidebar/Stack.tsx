@@ -8,7 +8,7 @@ const Stack = () => {
 
       <div className="icons_list">
         {STACK_ICONS_LIST.map((item) => (
-          <StackItem item={item} />
+          <StackItem key={item.name} item={item} />
         ))}
       </div>
     </div>

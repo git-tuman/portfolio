@@ -1,10 +1,26 @@
-import { PageSwitcherList } from "../../constants";
-import React from "react";
+import { HIDDEN, PageSwitcherList } from "../../constants";
+import React, { useEffect, useRef, useState } from "react";
 import PageSwitcherItem from "./PageSwitcherItem";
 
 const PageSwitcher = () => {
+  const [isHidden, setIsHidden] = useState(false);
+
+  const lastScrollY = useRef(0);
+
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+
+    setIsHidden(lastScrollY.current < scrollY ? true : false);
+    lastScrollY.current = scrollY;
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="page-switcher_wrapper">
+    <div className={`page-switcher_wrapper ${isHidden ? HIDDEN : ""}`}>
       <div className="page-switcher_container">
         {PageSwitcherList.map((item, index) => (
           <React.Fragment key={index}>

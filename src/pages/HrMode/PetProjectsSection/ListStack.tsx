@@ -3,8 +3,8 @@ const ListStack = ({ value }: { value: string }) => {
 
   return (
     <ul>
-      {list.map((item) => (
-        <li>{item}</li>
+      {list.map((item, index) => (
+        <li key={index}>{item}</li>
       ))}
     </ul>
   );
