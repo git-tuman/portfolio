@@ -1,69 +1,53 @@
-# React + TypeScript + Vite
+# Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Личное портфолио, созданное на основе собственного макета в Figma. Дизайн вдохновлён цветовой темой Monokai Pro в VS Code и выполнен с упором на адаптивную верстку, минимализм, контраст и удобочитаемость. Приложение реализовано как многостраничный SPA с поддержкой клиентской маршрутизации, обеспечивающей быстрые переходы между режимами HR Mode и Dev Mode без перезагрузки страницы.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Деплой
 
-## Expanding the ESLint configuration
+[GitHub Pages](https://git-tuman.github.io/portfolio/)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Стек технологий
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- TypeScript
+- React
+- React Router DOM
+- FSD-архитектура
+- Адаптивная верстка
+- SCSS (адаптивная верстка, анимации)
+- Lazy loading изображений
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Функционал и особенности
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Собственный дизайн в Figma, адаптивная и резиновая верстка для ПК и мобильных устройств.
+- Ленивая загрузка изображений для повышения скорости отображения страниц.
+- Анимации переходов и появления элементов, выполненные по макету (SCSS).
+- Переключение режимов отображения страницы через кнопки PageSwitcher (на базе React Router DOM).
+- Навигация по секциям "Обо мне", "Пет-проекты", "Мои фото" в боковой панели ProfileSidebar с основной информацией.
+- Адаптивное поведение: при ширине экрана менее 768px боковая панель скрывается и открывается по клику на кнопку "<".
+- Два режима чтения:
+  - HR Mode - минималистичное отображение для удобного чтения.
+  - Dev Mode - стилизация под интерфейс VS Code с анимациями открытия/закрытия секций.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## Как запустить проект локально
+
+```bash
+# Клонировать репозиторий
+git clone https://github.com/git-tuman/portfolio.git
+
+# Перейти в папку проекта
+cd portfolio
+
+# Установить зависимости
+npm install
+
+# Запустить в режиме разработки
+npm run dev
 ```
