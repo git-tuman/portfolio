@@ -9,7 +9,7 @@ const DevMode = lazy(() => import("./pages/DevMode/index.tsx"));
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/portfolio">
       <div className="app">
         <Routes>
           <Route path="/" element={<Navigate to={HR_MODE_PATCH} replace />} />
