@@ -458,6 +458,7 @@ $border-active: rgb(91, 89, 92);
   gap: 24px;
 
   @media (max-width: $tablet) {
+    border: none;
     background: $gray-30;
     backdrop-filter: $blur;
     transform: translateX(100%);
