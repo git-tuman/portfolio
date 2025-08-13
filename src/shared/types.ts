@@ -21,7 +21,7 @@ export type UserProfile = {
 
 export type Screenshots = {
   desktop: string[];
-  mobile: string[];
+  mobile?: string[];
 };
 
 export type Project = {

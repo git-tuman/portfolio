@@ -7,6 +7,13 @@ import ScreenWivoHero from "../assets/screen-wivo-hero.png";
 import ScreenWivoHeroMob from "../assets/screen-wivo-hero-mob.png";
 import ScreenWivoApp from "../assets/screen-wivo-app.png";
 import ScreenWivoAppMob from "../assets/screen-wivo-app-mob.png";
+import ScreenTMDBMoviesMain from "../assets/screen-tmdb-movies-main.png";
+import ScreenTMDBMoviesDetailsMovie from "../assets/screen-tmdb-movies-details-movie.png";
+import ScreenTitanicUnfiltered from "../assets/screen-titanic-unfiltered.png";
+import ScreenTitanicUnfilteredMob from "../assets/screen-titanic-unfiltered-mob.png";
+import ScreenTitanicSurvStat from "../assets/screen-titanic-survival-status.png";
+import ScreenTitanicSurvStatMob from "../assets/screen-titanic-survival-status-mob.png";
+import ScreenTodoMindbox from "../assets/screen-todo-mindbox.png";
 import type {
   Icon,
   Link,
@@ -99,8 +106,8 @@ export const USER_PROFILE: UserProfile = {
   details: "24 года, г. Киров",
   message: "Привет, я - Junior Frontend разработчик.",
   stack:
-    "JS, TS, React, Redux, RTK, Redux thunk, WebSocket, Rest API, SCSS, HTML5.",
-  bio: "Создаю приложения с упором на оптимизацию, адаптивность, чистоту и читаемость кода, люблю автоматизировать рутину и внедрять best practices. Постоянно учусь новому, открыт к интересным задачам и командной работе. На данный момент ищу первую работу где я смогу развиваться во Frontend направлении. В свободное время люблю выбираться на природу в кругу своей компании:)",
+    "JavaScript, TypeScript, React, Redux, Redux Toolkit, Redux thunk, WebSocket, HTML, CSS, SASS, WebPack, Vite, Rest API, Material UI, Ant Design, Git, Figma, Feature-Sliced Design.",
+  bio: "Создаю приложения с упором на оптимизацию, адаптивность, чистоту и читаемость кода, люблю автоматизировать рутину и внедрять best practices. Постоянно учусь новому, открыт к интересным задачам и командной работе. На данный момент ищу первую работу где я смогу развиваться во Frontend направлении. В свободное время люблю выбираться на природу в кругу своей компании.",
   contacts: contactsList,
 };
 
@@ -122,34 +129,76 @@ export const PET_PROJECTS_LIST: Project[] = [
       mobile: [ScreenWivoHeroMob, ScreenWivoAppMob],
     },
     description:
-      "Одностраничный лендинг, реализованный в рамках тестового задания. Проект выполнен с упором на пиксель-перфект, адаптивную верстку, анимации и быструю загрузку.",
+      "Одностраничный лендинг, реализованный с упором на пиксель-перфект, адаптивную верстку, анимации и быструю загрузку.",
     stack:
-      "React 19 + TypeScript, SCSS, Webpack, FSD-архитектура (минимальная реализация: shared + widgets), IntersectionObserver API, Адаптивная верстка, Lazy loading изображений, CSS-анимации (SCSS)",
+      "TypeScript, React, Webpack, FSD-архитектура, IntersectionObserver API, Адаптивная верстка, Lazy loading изображений, CSS-анимации (SCSS)",
     details:
       "Адаптивная pixel perfect вёрстка по макету Figma: поддержка мобильных и десктопных экранов (до 1920px), резиновая вёрстка для промежуточных разрешений. Навигация реализована с адаптивным хедером и бургер-меню для мобильных устройств, подсветка навигации активной секции через кастомный хук на IntersectionObserver. Оптимизирована производительность: загрузка страницы ~500мс, ленивая загрузка изображений, минимизация стилей и скриптов, семантическая разметка для SEO. Добавлены анимации переходов и появления элементов на SCSS. Это обеспечивает: удобство и быстрое взаимодействие на любых устройствах, плавный пользовательский опыт, высокую скорость загрузки и хорошее SEO, лёгкость поддержки и масштабирования проекта.",
   },
   {
-    name: "WIVO Bank 2",
+    name: "TMDB Movies",
     deploy: {
       name: DEMO,
-      value: "https://git-tuman.github.io/wivo-bank",
-      link: "https://git-tuman.github.io/wivo-bank",
+      value: "https://git-tuman.github.io/tmdb-movies",
+      link: "https://git-tuman.github.io/tmdb-movies",
     },
     repo: {
       name: REPO,
-      value: "https://github.com/git-tuman/wivo-bank",
-      link: "https://github.com/git-tuman/wivo-bank",
+      value: "https://github.com/git-tuman/tmdb-movies",
+      link: "https://github.com/git-tuman/tmdb-movies",
     },
     screenshots: {
-      desktop: [ScreenWivoHero, ScreenWivoApp],
-      mobile: [ScreenWivoHeroMob, ScreenWivoAppMob],
+      desktop: [ScreenTMDBMoviesMain, ScreenTMDBMoviesDetailsMovie],
     },
     description:
-      "Одностраничный лендинг, реализованный в рамках тестового задания. Проект выполнен с упором на пиксель-перфект, адаптивную верстку, анимации и быструю загрузку.",
+      "Многостраничный SPA - аналог Кинопоиска с использованием базы фильмов от TMDB, клиентской маршрутизацией и многостраничной структурой React Router: поддержка вложенных маршрутов, динамических параметров, быстрые переходы без перезагрузки страницы. Проект выполнен в рамках обучения основам фронтенд разработки. P.S.: К сожалению, TMDB прекратил работу в России, поэтому полноценное использование их API возможно только через VPN.",
     stack:
-      "React 19 + TypeScript, SCSS, Webpack, FSD-архитектура (минимальная реализация: shared + widgets), IntersectionObserver API, Адаптивная верстка, Lazy loading изображений, CSS-анимации (SCSS)",
+      "TypeScript, React, React Router DOM, Redux, Material UI, Webpack, Lazy loading изображений",
     details:
-      "Адаптивная pixel perfect вёрстка по макету Figma: поддержка мобильных и десктопных экранов (до 1920px), резиновая вёрстка для промежуточных разрешений. Навигация реализована с адаптивным хедером и бургер-меню для мобильных устройств, подсветка навигации активной секции через кастомный хук на IntersectionObserver. Оптимизирована производительность: загрузка страницы ~500мс, ленивый лоадинг изображений, минимизация стилей и скриптов, семантическая разметка для SEO. Добавлены анимации переходов и появления элементов на SCSS. Это обеспечивает: удобство и быстрое взаимодействие на любых устройствах, плавный пользовательский опыт, высокую скорость загрузки и хорошее SEO, лёгкость поддержки и масштабирования проекта.",
+      "Авторизация реализована в виде заглушки: API-токен подхватывается автоматически без ввода пользователем. Управление глобальным состоянием с помощью Redux. Реализованы пагинация и фильтрация фильмов по нескольким параметрам: названию, популярности/рейтингу, году выпуска и жанру. Динамическая подсветка выбранной страницы пагинации на основе данных из глобального состояния. Сброс фильтров и пагинации к состоянию по умолчанию осуществляется нажатием на кнопку очистки (крестик). Маршрутизация: переход на страницу авторизации по клику на иконку профиля; переход на страницу с подробной информацией о фильме по клику на карточку фильма. Добавление фильмов в избранное по клику на иконку звездочки; цвет иконки динамически меняется в зависимости от ответа API (статус в базе данных). Оптимизация производительности за счёт ленивой загрузки изображений (lazy loading). Это обеспечивает: удобство и быстрое взаимодействие, плавный и отзывчивый пользовательский опыт, высокую скорость загрузки и лёгкость поддержки; благодаря продуманной маршрутизации, управлению состоянием и оптимизациям, приложение остаётся масштабируемым и комфортным в использовании.",
+  },
+  {
+    name: "Titanic passenger list",
+    deploy: {
+      name: DEMO,
+      value: "https://git-tuman.github.io/titanic-passenger-list",
+      link: "https://git-tuman.github.io/titanic-passenger-list",
+    },
+    repo: {
+      name: REPO,
+      value: "https://github.com/git-tuman/titanic-passenger-list",
+      link: "https://github.com/git-tuman/titanic-passenger-list",
+    },
+    screenshots: {
+      desktop: [ScreenTitanicUnfiltered, ScreenTitanicSurvStat],
+      mobile: [ScreenTitanicUnfilteredMob, ScreenTitanicSurvStatMob],
+    },
+    description:
+      "Интерактивная таблица пассажиров Титаника, реализованный с упором на быструю загрузку, работу с глобальным стейт менеджером и оптимизацию. Поддерживает ленивую загрузку, фильтрацию по основным параметрам и оптимизированный рендер.",
+    stack:
+      "React, TypeScript, Redux Toolkit, react-intersection-observer, Webpack",
+    details:
+      "В роли глобального стейт-менеджера используется Redux Toolkit. Для имитации запроса на сервер применяется createAsyncThunk, где подхватывается список пассажиров из passengers.json. Каждый пассажир обёрнут в React.memo для исключения повторного вычисления элемента при изменении фильтрации. Реализована ленивая загрузка (lazy loading) элементов списка с помощью хука useInView из библиотеки react-intersection-observer: при прокрутке до последнего элемента в списке подгружаются дополнительные 20 пассажиров. Фильтрация пассажиров реализована по имени, полу, возрасту, факту выживания; фильтрация запускается по клику на кнопку SEARCH или по нажатию Enter, а при переключении фильтра на Unfiltered подгружается список без фильтрации. Это обеспечивает: эффективную работу с большими объёмами данных без перегрузки интерфейса, быстрый отклик на действия пользователя, оптимальное использование ресурсов и удобную навигацию по информации.",
+  },
+  {
+    name: "TODO",
+    deploy: {
+      name: DEMO,
+      value: "https://git-tuman.github.io/todo-mindbox",
+      link: "https://git-tuman.github.io/todo-mindbox",
+    },
+    repo: {
+      name: REPO,
+      value: "https://github.com/git-tuman/todo-mindbox",
+      link: "https://github.com/git-tuman/todo-mindbox",
+    },
+    screenshots: {
+      desktop: [ScreenTodoMindbox],
+    },
+    description:
+      "Минималистичное приложение, реализованное в рамках тестового задания, предназначенное для удобного управления списком задач (TODO) с интуитивным интерфейсом и возможностью масштабирования.",
+    stack: "React, TypeScript, Ant Design, Vite",
+    details: `Глобальный стейт менеджер написан на основе useReducer + createContext. Добавление задач из поля ввода по нажатию Enter или по кнопке "+". Количество символов в поле ввода валидируется с помощью логики прописанной во встроенном пропсе rules компонента Form.Item из Ant Design; минимальное количество символов: 5, при попытке ввести меньшее количество - отрисовывается ошибка "Minimum 5 characters!" под полем ввода. Реализована фильтрация задач по спискам: общий, невыполненные задачи, выполненые задачи. Отображение количества оставшихся невыполненых задач. Удаление выполненых задач по клику на кнопку "Clear completed". Управление локальным состоянием через React Hooks; легко масштабируется до Redux/RTK или других решений. Это обеспечивает: мгновенную реакцию интерфейса и комфортную работу с задачами, высокую скорость разработки и запуска, уверенность благодаря строгой типизации и облегчённую дальнейшую масштабируемость проекта.`,
   },
 ];
 

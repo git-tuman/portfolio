@@ -35,7 +35,7 @@ const ScreenshotsDev = ({ item }: { item: Screenshots }) => {
             </div>
 
             <div className="screenshots_mobile">
-              {item.mobile.map((screen, index) => (
+              {item.mobile?.map((screen, index) => (
                 <img key={index} src={screen} loading="lazy" />
               ))}
             </div>
