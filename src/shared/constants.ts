@@ -1,6 +1,5 @@
 import GitHubIcon from "../assets/github-original.svg";
 import TelegramIcon from "../assets/telegram-original.svg";
-import HeadHunterIcon from "../assets/hh.svg";
 import GmailIcon from "../assets/gmail.svg";
 import WhatsAppIcon from "../assets/whatsapp.svg";
 import ScreenWivoHero from "../assets/screen-wivo-hero.png";
@@ -80,12 +79,6 @@ const contactsList: Link[] = [
     value: "@tg_tuman",
     link: "https://t.me/tg_tuman",
     icon: TelegramIcon,
-  },
-  {
-    name: "HeadHunter",
-    value: "Мое резюме",
-    link: "https://hh.ru",
-    icon: HeadHunterIcon,
   },
   {
     name: "Gmail",
